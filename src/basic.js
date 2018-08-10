@@ -73,18 +73,34 @@ const simpleInterest = function(principle,period,rate) {
   This function returns the simple interest calculated when given
   principle, period and rate of interest annually(in that order)
 */
+const compoundInterest = function (principle, noOfYears, rate, compFreq) {
+ compFreq = (compFreq) ? compFreq : 1;
+ let comp = Math.floor(noOfYears * compFreq);
+ return principle * Math.pow(((100 + rate / compFreq) / 100), comp) - principle;
+};
 
 /*
   greatestOf
   This function returns the greatest of three numbers
 */
+const greatestOf = function(firstNumber,secondNumber,thirdnumber) {
+  if (firstNumber>secondNumber && firstNumber>secondNumber) {
+    return firstNumber;
+    } else if (secondNumber>firstNumber && secondNumber>thirdnumber) {
+      return secondNumber;
+    } else {
+      return thirdnumber;
+    }
+}
 
 
 /*
   averageOf
   This function returns the average of three numbers
 */
-
+const averageOf = function(firstNumber,secondNumber,thirdnumber) {
+  return (firstNumber+secondNumber+thirdnumber)/3;
+}
 
 exports.isEven=isEven;
 exports.isOdd=isOdd;
