@@ -2,12 +2,17 @@
   selectOdd
   This function selects all the odd numbers from a given list of numbers
 */
+const selectOdd = function(numberList) {
+  return numberList.filter(number=>number%2!=0);
+}
 
 /*
   selectEven
   This function selects all the even numbers from a given list of numbers
 */
-
+const selectEven = function(numberList) {
+  return numberList.filter(number=>number%2==0);
+}
 
 /*
   sumUp
